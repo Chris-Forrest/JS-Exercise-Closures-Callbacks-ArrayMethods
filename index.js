@@ -132,8 +132,8 @@ function processProduct(num1, num2, cb) {
  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
  * should return 3.
 */
-function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
-  /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
+function processDuplicateFree(stringList, cb) {
+  return cb(stringList[stringList.length -1]);
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
@@ -155,8 +155,12 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * 
  * [2] Invoking `lowerCaseStrings` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
-function lowerCaseStrings(/* code here */) {
-  /* code here */
+ 
+function lowerCaseStrings(strings ) {
+  let lowerCase = [];
+  strings.forEach((item) => lowerCase.push(item.toLowerCase())
+  );
+  return lowerCase;
 }
 
 /**
@@ -174,8 +178,15 @@ function lowerCaseStrings(/* code here */) {
  * 
  * [2] Invoking `isItAnApple` with `['a', 'b', 'c' ]` will return `[ false, false, false ]`.
 */
-function isItAnApple(/* code here */) {
-  /* code here */
+function isItAnApple(strings) {
+ return strings.map(function(item){
+    if(item === 'apple'){
+      return true;
+    }else{
+      return false;
+    }
+  });
+  
 }
 
 /**
@@ -194,8 +205,11 @@ function isItAnApple(/* code here */) {
  * 
  * [2] Invoking `removeApple` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
-function removeApple(/* code here */) {
-  /* code here */
+function removeApple(strings) {
+  const noApple = strings.filter(function(item){
+    return item !== 'apple';
+  });
+return noApple;
 }
 
 /**
@@ -213,8 +227,11 @@ function removeApple(/* code here */) {
  * 
  * [2] Invoking `stringSmash` with `['a', 'b', 'c' ]` will return `abc`.
 */
-function stringSmash(/* code here */) {
-  /* code here */
+function stringSmash(strings) {
+  return strings.reduce(function(accumulator, item){
+    return accumulator + item;
+  });
+  
 }
 
 // A local community center is holding a fund raising 5k fun run and has invited
@@ -232,8 +249,10 @@ function stringSmash(/* code here */) {
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
-  /* CODE HERE */
+function getFullNames(runners) {
+  return runners.map(function(item){
+    return `${item.last_name}, ${item.first_name}`;
+  });
 }
 
 /**
