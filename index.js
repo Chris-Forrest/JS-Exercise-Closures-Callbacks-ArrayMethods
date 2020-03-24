@@ -66,8 +66,8 @@ function processLength(list, cb) {
  * Invoking `processLastItem` passing `['foo', 'bar']` and `(str) => str + str`,
  * should return 'barbar'.
 */
-function processLastItem(/* CODE HERE */) {
-  /* CODE HERE */
+function processLastItem(list, cb) {
+  return cb (list[list.length-1]);
 }
 
 /**
